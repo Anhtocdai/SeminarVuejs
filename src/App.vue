@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1 style="text-align: center;">Câu hỏi tương tác </h1>
     <MyQuiz @show-modal="handleModal" />
     <AppModal :message="modalMessage" :show="showModal" @close="closeModal" />
   </div>

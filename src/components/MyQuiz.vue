@@ -17,17 +17,17 @@ export default {
     return {
       questions: [
         {
-          title: "Which Vue directive is used to conditionally display an element?",
+          title: "Quiz 1: Which Vue directive is used to conditionally display an element?",
           options: ["v-model", "v-bind", "v-show", "v-for"],
           correctAnswer: "v-show"
         },
         {
-          title: "To display the value from the data property 'message' inside a <p> tag with text interpolation, what is the correct syntax?",
+          title: "Quiz 2: To display the value from the data property 'message' inside a <p> tag with text interpolation, what is the correct syntax?",
           options: ["<p>// message //</p>", "<p>'' message ''</p>", "<p>{{ message }}</p>", "<p>## message ##</p>"],
           correctAnswer: "<p>{{ message }}</p>"
         },
         {
-          title: "How do you define a computed property in Vue?",
+          title: "Quiz 3: How do you define a computed property in Vue?",
           options: ["As a method inside the 'computed' instance", "As a variable inside the 'computed' instance", "As a method inside the 'methods' instance", "As a variable inside the 'methods' instance"],
           correctAnswer: "As a method inside the 'computed' instance"
         }
@@ -41,7 +41,7 @@ export default {
       if (selectedOption === correctAnswer) {
         this.$emit('show-modal', '<h1> Chúc mừng, bạn đã trả lời đúng! </h1>');
       } else {
-        this.$emit('show-modal', "<h1> Chúc bạn may mắn lần sau ^_^ </h1>");
+        this.$emit('show-modal', "<h1> Chúc bạn may mắn lần sau (^ . ^)</h1>");
       }
     }
   }
