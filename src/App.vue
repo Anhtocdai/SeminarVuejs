@@ -1,26 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <MyQuiz @show-modal="handleModal" />
+    <AppModal :message="modalMessage" :show="showModal" @close="closeModal" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue';
+import MyQuiz from './components/MyQuiz.vue';
+import AppModal from './components/AppModal.vue';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    MyQuiz,
+    AppModal
+  },
+  setup() {
+    const modalMessage = ref('');
+    const showModal = ref(false);
+
+    const handleModal = (message) => {
+      modalMessage.value = message;
+      showModal.value = true;
+    };
+
+    const closeModal = () => {
+      showModal.value = false;
+    };
+
+    return {
+      modalMessage,
+      showModal,
+      handleModal,
+      closeModal
+    };
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
